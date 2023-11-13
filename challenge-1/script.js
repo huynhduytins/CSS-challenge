@@ -1,9 +1,11 @@
-const menuIcon = document.querySelector(".menu-icon");
-const children = [...menuIcon.children];
+const menuIcon = document.querySelector('.menu-icon')
 
-menuIcon.addEventListener("click", () => {
-  menuIcon.classList.toggle("active");
-  children.forEach((child) => {
-    child.classList.remove("no-animation");
-  });
-});
+menuIcon.addEventListener('click', () => {
+  if ([...menuIcon.classList].includes('open')) {
+    menuIcon.classList.remove('open')
+    menuIcon.classList.add('close')
+  } else {
+    menuIcon.classList.remove('close')
+    menuIcon.classList.add('open')
+  }
+})
